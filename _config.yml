@@ -1,0 +1,26 @@
+# Dependencies
+markdown:         kramdown
+highlighter:      rouge
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Entry-HW
+tagline:          'Entry Hardware'
+description:      '엔트리 하드웨어 개발 가이드'
+url:              http://www.play-entry.org
+baseurl:          /
+
+author:
+  name:           'JY. KIM'
+  url:            http://www.play-entry.org
+
+paginate:         5
+paginate_path: "/posts/page:num/"
+
+# Custom vars
+version:          1.5.1
+
+# Gems
+gems: [jekyll-paginate, jekyll-gist]
