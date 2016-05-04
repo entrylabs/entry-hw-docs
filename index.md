@@ -23,4 +23,3 @@ title: 인덱스
   
 * [모듈추가]({{site.base-link-url}}{% post_url 2016-05-03-add_module %})  
 * [블록추가]({{site.base-link-url}}{% post_url 2016-05-03-add_blocks %}) 
-
