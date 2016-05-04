@@ -12,6 +12,7 @@ title: 인덱스
 
 **Overview:**  
 
+* [개발환경 세팅]({{site.base-link-url}}/SettingEnvironments/)  
 * [시작하기]({{site.base-link-url}}/GettingStarted/)  
 * [기본적인 하드웨어 등록 절차 및 방법]({{site.base-link-url}}{% post_url 2016-05-03-base_guide %})  
 * [Git Fork 방법]({{site.base-link-url}}{% post_url 2016-05-03-git_fork %})  

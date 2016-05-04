@@ -8,7 +8,11 @@ title: 개발환경 세팅
 
 > Node.js의 버전은 5를 기준으로 합니다.(6은 아직 테스트 안됨.)  
 
+<br/>
+
 ---  
+
+<br/>  
 
 ### Node.js의 설치  
 사실 Entry-HW 개발과 EntryJS의 블록추가만을 위해서는 Node.js를 설치할 필요는 없습니다. 다만, 개발시에 필요한 의존성모듈들을 설치할때 필요한 NPM이 Node.js에 포함되어 있고 기타 라이브리 빌드등에 사용되어 짐으로 필수적으로 설치되어야 할 프레임워크 입니다.
@@ -22,7 +26,12 @@ title: 개발환경 세팅
 #### Linux  
 - [사이트 참조](https://nodejs.org/en/)  
 
+<br/>
+
 ---  
+
+<br/>  
+ 
 
 ### Grunt 설치  
 Grunt는 사전 정의된 Task들을 실행하는 자바스크립트용 빌드 툴 입니다. Entry 에서는 EntryJS의 concatenating, minifying을 수행하기 위해 사용되어지며 해당 모듈없이는 블록생성에 상당한 어려움이 발생합니다. 블록생성에 가장 필요한 환경 설정이라고 보시면 됩니다. 설치는 간단하게 `npm`으로 수행합니다.  
@@ -34,8 +43,11 @@ $ npm install -g grunt
 $ npm install -g grunt-cli
 {% endhighlight %}  
 Grunt의 Command Line Interface 까지 설치를 해줘야 본격적으로 `grunt`명령어를 콘솔에서 사용할 수 있습니다.  
+<br/>
 
----
+---  
+
+<br/>  
 
 ### Electron-prebuilt 설치
 Entry-HW(또는 Entry-Offline)프로그램은 현재 [Electron](http://electron.atom.io/) 기반으로 작성되어져 있습니다. Electron은 기본적으로 HTML5기술을 사용하여 크로스 플렛폼에 대응하여 데스크톱 어플리케이션을 제작할수 있도록 제공하는 오픈소스 프레임워크 입니다. Entry-HW를 개발하기 위해서는 필수적으로 설치해야 할 프레임워크입니다. 설치는 간단하게 `npm`으로 수행합니다.  
@@ -45,8 +57,11 @@ Entry-HW(또는 Entry-Offline)프로그램은 현재 [Electron](http://electron.
 $ npm install -g electron-prebuilt
 {% endhighlight %}  
 -g 옵션을 이용하여 설치를 해야 콘솔에서 곧바로 `$ electron`이라는 명령어가 사용가능해 집니다. Entry-HW(또는 Entry-Offline)의 루트 폴더에서 `$ electron app`이라는 명령어를 수행하면 해당 프로그램이 실행되도록 되어 있습니다.
+<br/>
 
 ---  
+
+<br/>  
 
 ### Git 설치하기
 Git은 소스코드를 관리하기 위한 버전관리 도구 입니다. 일반적으로 많은 오픈소스들이 [Github](https://www.github.com)를 통해서 소스가 공개되어 지고 관리가 되고 있습니다. 저희의 Entry-HW와 EntryJS의 경우에도 Github를 통해서 관리되고 있는 상태입니다. Github의 소스를 다운받고 수정한 소스를 반영하기위해서 Git Client 설치가 필수적입니다.
@@ -63,9 +78,13 @@ Git사용이 익숙치 않은 사용자들을 위해 GUI툴들이 제공되고 �
 #### Git 자료
 Git에 익숙하지 않는 분들을 위해 Git정보를 얻을수 있는 사이트를 알려드립니다.
 
-> [Git 간편 안내서](https://rogerdudler.github.io/git-guide/index.ko.html)
+> [Git 간편 안내서](https://rogerdudler.github.io/git-guide/index.ko.html)  
 
---- 
+<br/>
+
+---  
+
+<br/>  
 
 위와 같이 설치를 완료하시면 기본적인 개발환경 설정이 끝나게 됩니다. 다음은 각 프로젝트별 환경세팅하는법을 설명합니다.
 
@@ -91,28 +110,37 @@ EntryJS를 수정하고 차후에 반영하기 위해서는 Fork하는 과정이
 ![Fork]({{ site.base-link-url }}/wiki-image/environment/fork.png)  
 
 Fork를 통하여 본인 계정으로 해당 Repository를 복사합니다. 복사한 레포지토리를 git clone으로 내 로컬 컴퓨터에 다운 받아 개발 가능한 상태로 만듭니다.  
-  
---- 
+<br/>
 
-#### EntryJS 의존성 모듈 설치
+---  
+
+<br/>  
+
+### EntryJS 의존성 모듈 설치
 EntryJS를 사용하기위해 여러가지 라이브러리를 사용하고있습니다. 사용하는 모듈들은 최상위폴더의 package.json에 devDependencies에 정의되어 있습니다. 이를 설치하기 위해서 `npm`을 사용하면 매우 쉽게 설치할수 있습니다.
 {% highlight bash %}
 $ npm install
 {% endhighlight %}  
 위의 명령어를 EntryJS의 최상위 폴더에서 실행시키면 곧바로 모듈을 설치하기 시작합니다.
 몇분이 지나면 모든 모듈설치가 종료됩니다.  
-  
---- 
+<br/>
 
-#### EntryJS 빌드하기
+---  
+
+<br/>  
+
+### EntryJS 빌드하기
 이제 EntryJS의 개발 가능한 환경 설정이 완료되었습니다. 이제 [기본적인 하드웨어 등록 절차 및 방법]({{site.base-link-url}}{% post_url 2016-05-03-base_guide %})이나 [엔트리 블록추가]({{site.base-link-url}}{% post_url 2016-05-03-add_blocks %})에 설명드렸던 대로 블록을 수정 또는 추가 하신후 빌드만 수행하며 됩니다. 수행방법은 EntryJS의 최상위 폴더에서 아래와 같이 명령어를 입력하기만 하면됩니다.
 {% highlight bash %}
 // 해당 명령어를 수행하기 위해선 java sdk설치가 필요합니다.
 $ grunt
 {% endhighlight %}  
 위의 명령어가 잘 수행되었다면 EntryJS의 최상위 폴더에 dist라는 폴더가 생성되고 dist폴더 안에 entry.css, entry.js, entry.min.js의 3가지 파일이 생성됩니다.
+<br/>
 
---- 
+---  
+
+<br/>  
 
 EntryJS는 위와 같은 과정으로 환경 설정이 마무리 됩니다.  
 다음은 Entry-HW 의 환경 설정 입니다.
@@ -124,5 +152,47 @@ EntryJS는 위와 같은 과정으로 환경 설정이 마무리 됩니다.
 --- 
 
 ## Entry-HW 세팅하기  
+  
+<br/>  
 
-### Entry
+### Entry-HW Fork하기  
+Entry-HW도 역시 수정하고 차후에 반영하기 위해서는 Fork하는 과정이 필요합니다.  
+먼저, Entry-HW GitHub 페이지에 접속 합니다.  
+  
+> [https://github.com/entrylabs/entry-hw](https://github.com/entrylabs/entry-hw)  
+  
+사이트 접속 후 우측 상단에 있는 Fork 버튼을 클릭합니다.  
+![Fork2]({{ site.base-link-url }}/wiki-image/environment/fork2.png)  
+
+Fork를 통하여 본인 계정으로 해당 Repository를 복사합니다. 복사한 레포지토리를 git clone으로 내 로컬 컴퓨터에 다운 받아 개발 가능한 상태로 만듭니다.  
+  
+<br/>  
+
+---  
+
+<br/>  
+
+### Entry-HW의 의존성모듈 설치
+Entry-HW는 이미 의존성 모듈들이 포함되어 Repository에 포함되어 있습니다.  
+별도의 설치가 필요하지 않습니다.  
+<br/>
+
+---  
+
+<br/>  
+
+### Entry-HW 실행하기
+Entry-HW는 Electron기반으로 프로그램이 작성되어 있습니다. 가장 최상위 폴더는 Application을 빌드와 실행 및 프로젝트를 관리하는 위치이고 실질적인 소스코드는 app폴더에 들어있습니다. 실행은 가장최상위 위치에서 `electron app`을 콘솔에서 수행하면 됩니다.
+{% highlight bash %}
+$ electron app
+// 디버그 모드가 사용하고 싶다면.
+$ electron -d app
+{% endhighlight %}  
+<br/>
+
+---  
+
+<br/>  
+
+## 마무리
+위와 같은 과정을 거치면 Entry-HW의 모듈을 추가하는 환경과 EntryJS의 블록을 추가하는 개발환경을 구성할수 있다.
