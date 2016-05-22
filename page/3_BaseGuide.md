@@ -1,6 +1,6 @@
 ---
-layout: post
-title: 기본적인 하드웨어 등록 절차 및 방법
+layout: page
+title: 기본 개발 절차
 ---
 
 #### 엔트리 하드웨어 추가 순서

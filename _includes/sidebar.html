@@ -1,36 +1,46 @@
-<div class="sidebar">
-    <div class="container sidebar-sticky">
-        <div class="sidebar-about">
-            <h1>
-                <a href="{{ site.baseurl }}">
-                    {{ site.title }}
-                </a>
-            </h1>
-            <p class="lead">{{ site.description }}</p>
-        </div>
-
-        <nav class="sidebar-nav">
-            <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ site.baseurl }}">인덱스</a>
-            <a class="sidebar-nav-item{% if page.url == '/posts/') %} active{% endif %}" href="{{ site.baseurl }}posts">문서들</a>
-            {% comment %}
-                The code below dynamically generates a sidebar nav of pages with
-                `layout: page` in the front-matter. See readme for usage.
-            {% endcomment %}
-
+<div class="nav-docs posts">
+    <div class="nav-docs-section">
+        <h3>Quick Start</h3>
+        <ul>
             {% assign pages_list = site.pages %}
             {% for node in pages_list %}
                 {% if node.title != null %}
                     {% if node.layout == "page" %}
-                        <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.base-link-url }}{{ node.url }}">{{ node.title }}</a>
+                        <li><a class="{% if page.url == node.url %}active{% endif %}" href="{{ site.base-link-url }}{{ node.url }}">{{ node.title }}</a></li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
-
-            <a class="sidebar-nav-item" href="{{ site.github.repo }}/zipball/master">다운로드</a>
-            <a class="sidebar-nav-item" href="{{ site.github.repo }}" target="_blank">GitHub</a>
-            <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
-        </nav>
-
-        <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+        </ul>
     </div>
+    <div class="nav-docs-section">
+        <h3>하드웨어 모듈 개발</h3>
+        <ul>
+            {% for post in site.posts %}
+                {% if post.type == "entryHw" %}
+                    <li><a class="{% if page.url == post.url %}active{% endif %}" href="{{site.base-link-url}}{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="nav-docs-section">
+        <h3>엔트리 블록 개발</h3>
+        <ul>
+            {% for post in site.posts %}
+                {% if post.type == "entryBlock" %}
+                    <li><a class="{% if page.url == post.url %}active{% endif %}" href="{{site.base-link-url}}{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="nav-docs-section">
+        <h3>Tip & Tech</h3>
+        <ul>
+            {% for post in site.posts %}
+                {% if post.type == "tipNTech" %}
+                    <li><a class="{% if page.url == post.url %}active{% endif %}" href="{{site.base-link-url}}{{ post.url }}">{{ post.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    
 </div>

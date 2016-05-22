@@ -9,7 +9,7 @@ kramdown:
 permalink:        pretty
 
 # Setup
-title:            Entry-HW
+title:            Entry Docs
 tagline:          'Entry Hardware'
 description:      '엔트리 하드웨어 개발 가이드'
 url:              http://entrylabs.github.io
@@ -24,7 +24,7 @@ github:
   repo: 		  https://github.com/entrylabs/entry-hw
 
 paginate:         5
-paginate_path: "/posts/page:num/"
+paginate_path:    "/posts/page:num/"
 
 # Custom vars
 version:          1.5.1

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 모듈 추가 방법
+type: entryHw
 ---
 
 #### 모듈추가
