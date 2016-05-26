@@ -1,7 +1,8 @@
 ---
 layout: post
-title: 엔트리 신규 블록추가
+title: 블록 명세 작성
 type: entryBlock
+order: 1
 ---
 
 ### 신규 엔트리 블록
@@ -115,10 +116,20 @@ sample_block 이라는 블록의 설정을 나타냅니다. sample_block이라�
 {% endhighlight %}   
 블록의 기능을 정의 합니다. 실질적인 블록의 로직을 담당합니다. 사용방법은 기존의 블록 방식과 같습니다.
 
+
 --- 
+
 
 ### 블록 사용 등록
 기존에는 static.js에 EntryStatic.getAllBlocks와 EntryStatic.blockInfo 두 가지를 설정했지만 blockInfo의 경우 block_entry.js에 포함되었습니다. getAllBlocks에만 사용 할 블록을 등록하면 해당 블록이 나오게 되어있습니다. 작성 방법은 기존과 같습니다.
 
-### 각 블록 모양별 생성 방법
-작성 예정 입니다.
+
+---  
+
+
+### 각 블록 모양별 생성 방법  
+
+#### 1. 값 블록  
+
+##### ㄱ. 기본 블록
+![기본 블록]({{site.base-link-url}}/wiki-image/block_create/default_value.png)
