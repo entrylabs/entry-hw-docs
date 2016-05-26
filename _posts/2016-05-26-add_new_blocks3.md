@@ -8,7 +8,7 @@ order: 3
 ### 1. 값 블록  
 
 #### ㄱ. 기본 블록
-![기본 블록]({{site.base-link-url}}/wiki-image/block_create/default_value.png)
+![기본 블록]({{site.imageurl}}block_create/default_value.png)
 {% highlight js %}
 Entry.block = {
     default_value: {
@@ -47,7 +47,7 @@ template 프로퍼티는 작성 되어 있지 않다면 Lang.template 에서 정
 ---  
 
 #### ㄴ. 기본 사용자 입력 블록
-![기본 블록]({{site.base-link-url}}/wiki-image/block_create/default_input_value.png)
+![기본 블록]({{site.imageurl}}block_create/default_input_value.png)
 {% highlight js %}
 Entry.block = {
     default_input_value: {
@@ -90,7 +90,7 @@ Entry.block = {
 
 #### ㄷ. 중첩 사용자 입력 블록
 
-![기본 블록]({{site.base-link-url}}/wiki-image/block_create/default_multi_input_value.png)
+![기본 블록]({{site.imageurl}}block_create/default_multi_input_value.png)
 {% highlight js %}
 Entry.block = {
     default_multi_input_value: {

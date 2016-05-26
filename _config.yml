@@ -14,6 +14,7 @@ tagline:          'Entry Hardware'
 description:      '엔트리 하드웨어 개발 가이드'
 url:              http://entrylabs.github.io
 baseurl:          /entry-hw/
+imageurl:          /entry-hw/public/image/
 base-link-url:    /entry-hw
 
 author:
