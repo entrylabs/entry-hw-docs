@@ -5,6 +5,22 @@ type: entryBlock
 order: 3
 ---
 
+### 목차
+
+1. 값 블록
+    1. 기본 블록
+    2. 기본 사용자 입력 블록
+    3. 중첩 사용자 입력 블록
+    4. 중첩 사용자 입력 블록 - 드롭다운 적용
+2. 판단 블록
+    1. 기본 판단 블록
+    2. 중첩 사용자 입력 판단 블록
+    3. 중첩 사용자 드롭다운 판단 블록
+3. 순차 블록
+    1. 기본 순차 블록
+    2. 사용자 입력 순차 블록
+    3. 드롭다운 입력 순차 블록 
+
 ### 1. 값 블록  
 
 #### ㄱ. 기본 블록
@@ -28,7 +44,7 @@ Entry.block = {
         class: "test",
         // 블록 기능정의
         func: function (sprite, script) {
-            return 'value';
+            return "value";
         }
     }
 }
@@ -40,7 +56,7 @@ skeleton이 "basic_string_field"로 정의된 블록의 모양이 이와 같다.
 글자색이 제대로 보이지 않는다면 fontColor 프로퍼티를 통해 수정할수 있다.  
 template 프로퍼티에 정의한 텍스트가 그대로 나오게 된다.
 template 프로퍼티는 작성 되어 있지 않다면 Lang.template 에서 정의된 블록 명칭으로 값을 가져오게 된다.  
-**다만, 정의된 블록 명칭이 없을경우 프로그램 자체가 로드되지 않는 버그 있으므로 주의!**
+**다만, 정의된 블록 명칭이 없을경우 프로그램 자체가 로드가 되지 않음으로 주의!**
 
 > 유사한 블록으로 초시계 값, 소릿값 블록이 있다.  
 
@@ -75,7 +91,7 @@ Entry.block = {
             // 해당 값을 getField로 가져오고 
             // 가져 올때 paramsKeyMap에서 
             // 정의한 VALUE라는 키값으로 데이터를 가져온다.
-            return script.getField('VALUE', script);
+            return script.getField("VALUE", script);
         }
     }
 }
@@ -266,7 +282,7 @@ IF문을 사용할때 사용하는 파라미터 블럭 이다.
 ---  
 
 #### ㄴ. 중첩 사용자 입력 판단 블록
-![기본 판단 블록]({{site.imageurl}}block_create/default_input_boolean.png)
+![중첩 사용자 입력 판단 블록]({{site.imageurl}}block_create/default_input_boolean.png)
 {% highlight js %}
 Entry.block = {
     default_input_boolean: {
@@ -296,8 +312,8 @@ Entry.block = {
         },
         class: "test",
         func: function (sprite, script) {
-            var leftValue = script.getNumberValue('LEFTHAND', script);
-            var rightValue = script.getNumberValue('RIGHTHAND', script);
+            var leftValue = script.getNumberValue("LEFTHAND", script);
+            var rightValue = script.getNumberValue("RIGHTHAND", script);
             return (leftValue === rightValue);
         }
     }
@@ -309,8 +325,8 @@ Entry.block = {
 
 > 유사한 블록으로는 판단의 숫자 비교블록 이다.
 
-#### ㄷ. 중첩 사용자 입력 판단 블록
-![중첩 사용자 입력 판단 블록]({{site.imageurl}}block_create/default_dropdown_boolean.png)
+#### ㄷ. 중첩 사용자 드롭다운 판단 블록
+![중첩 사용자 드롭다운 판단 블록]({{site.imageurl}}block_create/default_dropdown_boolean.png)
 {% highlight js %}
 Entry.block = {
     default_dropdown_boolean: {
@@ -339,7 +355,7 @@ Entry.block = {
         },
         class: "test",
         func: function (sprite, script) {
-            var value = script.getNumberValue('VALUE', script);
+            var value = script.getNumberValue("VALUE", script);
             var result;
             switch(value) {
                 case 0:
@@ -355,6 +371,7 @@ Entry.block = {
 
             return result;
         }
+    }
 }
 {% endhighlight %}
 정해진 목록내에서 입력 값을 받으려면 드롭다운을 사용할수 있다. 
@@ -362,3 +379,129 @@ Entry.block = {
 
 > 유사한 블록으로는 하드웨어 디지털 입력 블록과 판단의 닿았는가 블록이 있다.
 
+---  
+
+### 3. 순차 블록  
+
+#### ㄱ. 기본 순차 블록  
+![기본 순차 블록]({{site.imageurl}}block_create/default_block.png)
+{% highlight js %}
+Entry.block = {
+    default_block: {
+        // 하드웨어 기본 색상
+        color: "#00979D",
+        skeleton: "basic",
+        // 순차블록은 마지막에 이미지가 들어가도록 되어 있다.
+        // 이미지도 parameter로 관리 됨으로 %1값이 마지막에 들어간다.
+        template: "변수 A값에 1더하기 %1",
+        params: [
+            {
+                type: "Indicator",
+                // hardware_03.png가 하드웨어 아이콘 이다.
+                img: "block_icon/hardware_03.png",
+                size: 12
+            }
+        ],
+        events: {},
+        def: {
+            type: "default_block"
+        },
+        class: "test",
+        isNotFor: [],
+        func: function (sprite, script) {
+            // A라는 변수가 있다고 가정할때.
+            Entry.test.A++;
+            // 순차 블록은 기본적으로 return값이 value가 아닌
+            // script.callReturn();이다.
+            // script.callReturn()은 다음 블록을 실행하도록 한다.
+            return script.callReturn();
+        }
+    }
+}
+{% endhighlight %}
+가장 많이 사용하는 블록이다. 순차로 실행되는 블록으로 정해진 기능을 수행하는 블록이다. 
+엔트리에서 가장 많이 사용되며 핵심블록으로 분류할수 있다.  
+
+#### ㄴ. 사용자 입력 순차 블록  
+![기본 순차 블록]({{site.imageurl}}block_create/default_input_block.png)
+{% highlight js %}
+Entry.block = {
+    default_input_block: {
+        color: "#00979D",
+        skeleton: "basic",
+        template: "변수 A값에 %1더하기 %2",
+        params: [{
+            type: "Block",
+            accept: "string"
+        }, {
+            type: "Indicator",
+            img: "block_icon/hardware_03.png",
+            size: 12
+        }],
+        events: {},
+        def: {
+            params: [{
+                type: "number",
+                params: [ "1" ]
+            },
+                null
+            ],
+            type: "default_input_block"
+        },
+        class: "test",
+        paramsKeyMap: {
+            VALUE: 0
+        },
+        func: function (sprite, script) {
+            var value = script.getNumberValue("VALUE", script);
+            // A라는 변수가 있다고 가정할때.
+            Entry.test.A += value;
+            return script.callReturn();
+        }
+    }
+}
+{% endhighlight %}
+유저 입력을 받아서 처리하는 순차 블록. 기본적인 생성방법은 기존의 블록들과 다르지 않다. 
+하드웨어를 처리할때 아날로그 센서값을 반아 처리하는 블록에 자주 사용된다.
+
+
+#### ㄷ. 드롭다운 입력 순차 블록  
+![드롭다운 입력 순차 블록  ]({{site.imageurl}}block_create/default_dropdown_block.png)
+{% highlight js %}
+Entry.block = {
+    default_dropdown_block: {
+        // 하드웨어 기본 색상
+        color: "#00979D",
+        "skeleton": "basic",
+        "template": "변수 A값에 %1더하기 %2",
+        "params": [{
+            type: "Dropdown",
+            options: [
+                [ "1", "1" ],
+                [ "2", "2" ],
+                [ "3", "3" ]
+            ],
+            fontSize: 11
+        }, {
+            "type": "Indicator",
+            "img": "block_icon/hardware_03.png",
+            "size": 12
+        }],
+        "def": {
+            "params": [ "1", null ],
+            "type": "default_dropdown_block"
+        },
+        "class": "test",
+        paramsKeyMap: {
+            VALUE: 0
+        },
+        "func": function (sprite, script) {
+            var value = script.getNumberField("VALUE", script);
+            // A라는 변수가 있다고 가정할때.
+            Entry.test.A += value;
+            return script.callReturn();
+        }
+    }
+}
+{% endhighlight %}
+이것 또한 많이 사용되는 블록이다. 보통은 하드웨어 블록에서 특성 센서나 포트를 지정해서 값을 처리 할때 사용한다.
