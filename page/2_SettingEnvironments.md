@@ -57,6 +57,11 @@ Entry-HW(또는 Entry-Offline)프로그램은 현재 [Electron](http://electron.
 $ npm install -g electron-prebuilt
 {% endhighlight %}  
 -g 옵션을 이용하여 설치를 해야 콘솔에서 곧바로 `$ electron`이라는 명령어가 사용가능해 집니다. Entry-HW(또는 Entry-Offline)의 루트 폴더에서 `$ electron app`이라는 명령어를 수행하면 해당 프로그램이 실행되도록 되어 있습니다.
+
+> 저희 개발팀에서는 npm start를 사용해서 일렉트론을 실행하고 있습니다.  
+npm start를 사용할경우에는 -g옵션으로 설치된 글로벌 electron-prebuilt가 아닌 npm install로 설치된 로컬 electron이 실행됩니다.  
+npm start로 실행시키실경우에는 -g옵션을 이용해서 글로벌 설치를 진행하지 않으셔도 됩니다.  
+(2016년 7월 8일 현재 electron 1.1.1버전을 사용하고 있습니다.)
 <br/>
 
 ---  
@@ -173,8 +178,10 @@ Fork를 통하여 본인 계정으로 해당 Repository를 복사합니다. 복�
 <br/>  
 
 ### Entry-HW의 의존성모듈 설치
-Entry-HW는 이미 의존성 모듈들이 포함되어 Repository에 포함되어 있습니다.  
-별도의 설치가 필요하지 않습니다.  
+Entry-HW를 실행하고 빌드 하기 위한 의존성 모듈을 설치가 필요합니다. 해당 의존설을 설치하면 굳이 electron-prebuilt를 글로벌 설치 하지 않으셔도 하드웨어 연결프로그램을 실행시킬수 있습니다.
+{% highlight bash %}
+$ npm install
+{% endhighlight %}  
 <br/>
 
 ---  
@@ -184,9 +191,13 @@ Entry-HW는 이미 의존성 모듈들이 포함되어 Repository에 포함되�
 ### Entry-HW 실행하기
 Entry-HW는 Electron기반으로 프로그램이 작성되어 있습니다. 가장 최상위 폴더는 Application을 빌드와 실행 및 프로젝트를 관리하는 위치이고 실질적인 소스코드는 app폴더에 들어있습니다. 실행은 가장최상위 위치에서 `electron app`을 콘솔에서 수행하면 됩니다.
 {% highlight bash %}
+// 글로벌로 설치된 electron-prebuilt를 사용할 경우
 $ electron app
 // 디버그 모드가 사용하고 싶다면.
 $ electron -d app
+
+// npm install 로 설치한 electron-prebuilt로 실행할 경우 (권장)
+$ npm start
 {% endhighlight %}  
 <br/>
 

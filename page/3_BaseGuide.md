@@ -36,12 +36,15 @@ title: 기본 개발 절차
 * block javascript 추가
     - (your path)/src/blocks 에 자바스크립트 추가(빌드시 자동 반영됨)
     - 해당 소스들 참고
-    - Blocky.Blocks과 Entry.block 1:1 매칭 되도록 블록 추가
-        - 해당 블록들은 아래의 static.js에 추가되어 있어야 합니다.
-        - Blocky.Blocks은 사용자에게 보여지는 블록 모양을 정의 합니다.
-        - Entry.block은 해당 블록의 동작을 정의 합니다.
-    - 블록에 사용되는 언어는 일반적으로 Lang이라는 다국어로 관리합니다.
-        - Lang.Blocks 으로 시작되는 부분으로 테스트시에는 하드코딩으로 확인가능합니다.
+    - ~~Blocky.Blocks과 Entry.block 1:1 매칭 되도록 블록 추가~~
+        - ~~해당 블록들은 아래의 static.js에 추가되어 있어야 합니다.~~
+        - ~~Blocky.Blocks은 사용자에게 보여지는 블록 모양을 정의 합니다.~~
+        - ~~Entry.block은 해당 블록의 동작을 정의 합니다.~~
+    - ~~블록에 사용되는 언어는 일반적으로 Lang이라는 다국어로 관리합니다.~~
+        - ~~Lang.Blocks 으로 시작되는 부분으로 테스트시에는 하드코딩으로 확인가능합니다.~~
+    - 새 블록라이브러리가 적용된에 따라 블록 기능 명세는 (your path)/src/workspace/block_entry.js 에서 처리 합니다.
+    - (your path)/src/blocks/에 추가되는 하드웨어 들은 해당하드웨어 Object정의만 있으면 됩니다.
+        - block_arduino.js를 참고해 주세요.(여러 하드웨어가 포함되어 있어서 적절한 예제 입니다)
 * block 매칭 작업
     - (your path)/src/hw.js 확인
     - this.hwInfo 부분에 해당 기기 추가 (30 Lines)
@@ -54,14 +57,15 @@ title: 기본 개발 절차
 * static.js 블럭모양 추가
     - (your path)/extern/util.static.js
     - EntryStatic.getAllBlocks 의 category가 arduino 인 요소에 해당 블록명 추가
-    - EntryStatic.blockInfo 에 블록명에 해당하는 실제 블록 모양추가
-        - xml = 실제 블럭모양
-        - isNotFor = 블록 Alias
-        - usage = 하드웨어의 경우 arduino 고정
-        - class = 블록타입 설정(엔트리 화면에서 블록구분선을 만들때 사용.)
+    - ~~EntryStatic.blockInfo 에 블록명에 해당하는 실제 블록 모양추가~~
+        - ~~xml = 실제 블럭모양~~
+        - ~~isNotFor = 블록 Alias~~
+        - ~~usage = 하드웨어의 경우 arduino 고정~~
+        - ~~class = 블록타입 설정(엔트리 화면에서 블록구분선을 만들때 사용.)~~
+    - 블록 라이브러리 변경으로 인해 blockInfo는 필요가 없어졌습니다. category만 등록해 주세요.
 * 언어추가 
     - (your path)/extern/util/ 확인
-    - ko, en, vn, code 4개의 js파일 로 구성됩니다.
+    - ko, en, code 3개의 js파일 로 구성됩니다.
     - example.html의 기본 요소는 ko.js 로 설정되어 있습니다.
         - 언어 변경시 해당언어로 변환 됩니다.
         - example.html에는 해당 기능 구현되어 있지 않습니다.
