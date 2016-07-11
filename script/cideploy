@@ -2,6 +2,7 @@
 set -e # 에러 발생 시 스크립트 중단
 
 cd _site
+git init
 git config user.name "JY KIM"
 git config user.email "kimorkim@gmail.com"
 git add .
