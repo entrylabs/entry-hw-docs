@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -e # 에러 발생 시 스크립트 중단
 
-mkdir _site
 cd _site
 git config user.name "JY KIM"
 git config user.email "kimorkim@gmail.com"
