@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+	<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      모듈 추가 방법 &middot; Entry Docs
+    
+  </title>
+
+  <!-- CSS -->
+  <!--
+  <link rel="stylesheet" href="/entry-hw/public/css/hyde.css">
+  -->
+  <link rel="stylesheet" href="/entry-hw/public/css/flux.css">
+  <link rel="stylesheet" href="/entry-hw/public/css/flux-extend.css">
+  <link rel="stylesheet" href="/entry-hw/public/css/syntax.css">
+  <link rel="stylesheet" href="/entry-hw/public/css/poole.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/entry-hw/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/entry-hw/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+	<body>
+		<div class="container">
+			<div class="nav-main">
+    <div class="wrap">
+        <a href="/entry-hw/" class="nav-home">
+            <img src="/entry-hw/public/image/logo.png"/>
+            <span>
+                Entry Docs
+            </span>
+        </a>
+        <ul class="nav-site">
+            <li>
+                <a class="active">
+                    DOCS
+                </a>
+            </li>
+            <li>
+                <a class="">
+                    SUPPORT
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/entrylabs/entry-hw" target="_blank">
+                    GITHUB
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+			<div class="content wrap documentationContent">
+				<div class="nav-docs posts">
+    <div class="nav-docs-section">
+        <h3>Quick Start</h3>
+        <ul>
+            
+            
+                
+                    
+                        <li><a class="" href="/entry-hw/page/1_GettingStarted/">시작하기</a></li>
+                    
+                
+            
+                
+                    
+                        <li><a class="" href="/entry-hw/page/2_SettingEnvironments/">개발환경 세팅</a></li>
+                    
+                
+            
+                
+                    
+                        <li><a class="" href="/entry-hw/page/3_BaseGuide/">기본 개발 절차</a></li>
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+                
+                    
+                
+            
+        </ul>
+    </div>
+    <div class="nav-docs-section">
+        <h3>하드웨어 모듈 개발</h3>
+        <ul>
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <li><a class="active" href="/entry-hw/2016/05/03/add_module/">모듈 추가 방법</a></li>
+                
+            
+        </ul>
+    </div>
+    <div class="nav-docs-section">
+        <h3>엔트리 블록 개발</h3>
+        <ul>
+            
+            
+                
+            
+                
+            
+                
+            
+                
+            
+                    <li><a class="" href="/entry-hw/2016/05/22/add_new_blocks/">블록 명세 작성</a></li>
+                
+            
+                
+            
+                    <li><a class="" href="/entry-hw/2016/05/26/add_new_blocks2/">블록 사용 등록</a></li>
+                
+            
+                
+            
+                    <li><a class="" href="/entry-hw/2016/05/26/add_new_blocks3/">각 블록 모양별 생성 방법</a></li>
+                
+            
+                
+            
+                    <li><a class="" href="/entry-hw/2016/07/08/add_new_blocks4/">하드웨어 블록 만들기</a></li>
+                
+            
+        </ul>
+    </div>
+    <div class="nav-docs-section">
+        <h3>Tip & Tech</h3>
+        <ul>
+            
+                
+            
+                
+                    <li><a class="" href="/entry-hw/2016/07/07/faq/">FAQ</a></li>
+                
+            
+                
+            
+                
+            
+                
+            
+                
+                    <li><a class="" href="/entry-hw/2016/05/03/git_fork/">Git Fork 방법</a></li>
+                
+            
+                
+            
+        </ul>
+    </div>
+    
+</div>
+
+				<div class="inner-content">
+
+					<div class="post">
+    <h1 class="post-title">모듈 추가 방법</h1>
+    <span class="post-date">03 May 2016</span>
+    <h4 id="section">모듈추가</h4>
+<p>엔트리에 하드웨어를 추가하기 위해서 수반되는 가장 기본적인 단계 입니다.</p>
+
+<h4 id="section-1">모듈의 위치</h4>
+<p>엔트리가 Electron이 적용됨에 따라 모듈의 위치도 변경되었습니다.<br />
+기존 상위폴더/modules에서 상위폴더/app/modules로 변경되었습니다.</p>
+
+<h4 id="section-2">모듈의 구성</h4>
+<p>모듈은 모듈명.js, 모듈명.json, 모듈명.png의 3가지로 구성됩니다.<br />
+<img src="https://raw.githubusercontent.com/entrylabs/entry-hw/gh-pages/wiki-image/module/default.PNG" alt="모듈의 구성" /></p>
+
+<h5 id="json-">모듈명.json 구조</h5>
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"하드웨어ID(엔트리와 사전규약 필요. ex.'010101')"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"en"</span><span class="p">:</span><span class="w"> </span><span class="s2">"English Name"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"ko"</span><span class="p">:</span><span class="w"> </span><span class="s2">"한글명"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"icon"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"이미지(.png | .jpg | .gif ...)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"모듈(.js)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"driver"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"win32-ia32"</span><span class="p">:</span><span class="w"> </span><span class="s2">"윈도우32비트 하드웨어 드라이버"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"win32-x64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"윈도우64비트 하드웨어 드라이버"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"reconnect"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"재접속 시도여부 (true | false)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firmware"</span><span class="p">:</span><span class="w"> </span><span class="s2">"펌웨어(board)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firmwareBaudRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Flash baud rate(57600 ...)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"데이터규격(json)"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"hardware"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"타입(serial)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"control"</span><span class="p">:</span><span class="w"> </span><span class="s2">"동작방식(slave | master)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"duration(32 ...)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"하드웨어 벤더명(ex.Arduino)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"firmwarecheck"</span><span class="p">:</span><span class="w"> </span><span class="s2">"펌웨어 자동체크여부 (true | false)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"baudRate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"baudRate(115200, 57600, 38400, 19200, 9600, 4800, 2400, 1800, 1200, 600, 300, 200, 150, 134, 110, 75, 50)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"parity"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"parity('none', 'even', 'mark', 'odd', 'space')"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"dataBits"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"dataBits(8, 7, 6, 5)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"stopBits"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"stopBits(1, 2)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"bufferSize"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"bufferSize(255 ...)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"delimiter"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"delimiter(ex '\r')"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"flowControl"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"flowControl(ex. 'hardware')"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<h5 id="js-">모듈명.js의 구조</h5>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">Module</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">//모듈의 constructor</span>
+<span class="p">}</span>
+
+<span class="c1">//필요시 Handler Data 초기값 설정</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">init</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">handler</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">//필요시 연결직후 Hardware에 보내는 초기값 설정</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">requestInitialData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">//연결직후 Hardware에서보내는 Inital데이터의 Vaildation</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">checkInitialData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">//Hardware에서 보내는 모든 데이터의 Vaildation</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">validateLocalData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">// 서버에서 보내온 데이터 세팅</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleRemoteData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">// Hardware에서 보내온 데이터 세팅</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">handleLocalData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// data: Native Buffer</span>
+<span class="p">};</span>
+
+<span class="c1">// 서버에 보낼 데이터 세팅</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">requestRemoteData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">handler</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">// Hardware에 보낼 데이터 세팅</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">requestLocalData</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="c1">// 서버 Connect 종료시 값 세팅</span>
+<span class="nx">Module</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">reset</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="p">};</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Module</span><span class="p">();</span>
+</code></pre>
+</div>
+
+</div>
+
+<div class="related">
+    <h2>Related Posts</h2>
+    <ul class="related-posts">
+        
+            <li>
+                <h3>
+                    <a href="/entry-hw/2016/07/08/add_new_blocks4/">
+                        하드웨어 블록 만들기
+                        <small>08 Jul 2016</small>
+                    </a>
+                </h3>
+            </li>
+        
+            <li>
+                <h3>
+                    <a href="/entry-hw/2016/07/07/faq/">
+                        FAQ
+                        <small>07 Jul 2016</small>
+                    </a>
+                </h3>
+            </li>
+        
+            <li>
+                <h3>
+                    <a href="/entry-hw/2016/05/26/add_new_blocks3/">
+                        각 블록 모양별 생성 방법
+                        <small>26 May 2016</small>
+                    </a>
+                </h3>
+            </li>
+        
+    </ul>
+</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
