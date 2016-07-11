@@ -31,3 +31,5 @@ version:              1.5.2
 
 # Gems
 gems: [jekyll-paginate, jekyll-gist]
+
+exclude: [vendor]
