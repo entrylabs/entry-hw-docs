@@ -6,8 +6,6 @@ title: 개발환경 세팅
 ## 기본 환경 세팅  
 엔트리 하드웨어 프로그램을 개발하기 위해 기본적으로 [node.js](https://nodejs.org/en/)가 설치되어 있어야 하며, npm을 통하여 grunt, grunt-cli, Electron-prebuilt가 설치되어야 합니다. 또한, 필요에의해 라이브러리들을 컴파일을 수행하기 위에 visual studio와 python의 설치가 필요할수 있습니다.  
 
-> Node.js의 버전은 5를 기준으로 합니다.(6은 아직 테스트 안됨.)  
-
 <br/>
 
 ---  
@@ -55,13 +53,15 @@ Entry-HW(또는 Entry-Offline)프로그램은 현재 [Electron](http://electron.
 #### 공통설치(NPM 사용)  
 {% highlight bash %}
 $ npm install -g electron-prebuilt
+// electron도 설치 가능하도록 변경됨
+$ npm install -g electron
 {% endhighlight %}  
 -g 옵션을 이용하여 설치를 해야 콘솔에서 곧바로 `$ electron`이라는 명령어가 사용가능해 집니다. Entry-HW(또는 Entry-Offline)의 루트 폴더에서 `$ electron app`이라는 명령어를 수행하면 해당 프로그램이 실행되도록 되어 있습니다.
 
 > 저희 개발팀에서는 npm start를 사용해서 일렉트론을 실행하고 있습니다.  
 npm start를 사용할경우에는 -g옵션으로 설치된 글로벌 electron-prebuilt가 아닌 npm install로 설치된 로컬 electron이 실행됩니다.  
 npm start로 실행시키실경우에는 -g옵션을 이용해서 글로벌 설치를 진행하지 않으셔도 됩니다.  
-(2016년 7월 8일 현재 electron 1.1.1버전을 사용하고 있습니다.)
+(2016년 11월 25일 현재 electron 1.4.5버전을 사용하고 있습니다.)
 <br/>
 
 ---  
@@ -141,6 +141,10 @@ $ npm install
 $ grunt
 {% endhighlight %}  
 위의 명령어가 잘 수행되었다면 EntryJS의 최상위 폴더에 dist라는 폴더가 생성되고 dist폴더 안에 entry.css, entry.js, entry.min.js의 3가지 파일이 생성됩니다.
+
+> 최근 closurecompiler의 compiler.jar 명칭이 변경되면서 정상적으로 빌드가 되지 않는 현상이 발생하고 있습니다.  
+혹시 오류메세지에서 compiler.jar를 찾지 못한다면 closurecompiler/compiler/compiler.jar가 있는지 확인하고 다른 이름으로 되어 있다면 해당 이름으로 수동 변경하시기 바랍니다.
+
 <br/>
 
 ---  
