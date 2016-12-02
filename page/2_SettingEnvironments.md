@@ -185,6 +185,10 @@ Fork를 통하여 본인 계정으로 해당 Repository를 복사합니다. 복�
 Entry-HW를 실행하고 빌드 하기 위한 의존성 모듈을 설치가 필요합니다. 해당 의존설을 설치하면 굳이 electron-prebuilt를 글로벌 설치 하지 않으셔도 하드웨어 연결프로그램을 실행시킬수 있습니다.
 {% highlight bash %}
 $ npm install
+// app폴더 안에도 추가로 설치해야할 의존성 모듈이 있습니다.
+// 해당 폴더에서도 npm install을 수행해야 합니다.
+$ cd app
+$ npm install
 {% endhighlight %}  
 <br/>
 

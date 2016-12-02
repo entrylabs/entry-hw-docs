@@ -15,6 +15,7 @@ url:                  http://entrylabs.github.io
 baseurl:              /entry-hw/
 imageurl:             /entry-hw/public/image/
 base-link-url:        /entry-hw
+port:                 5000
 
 author:
   name:               'kimorkim'
